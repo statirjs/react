@@ -1,10 +1,11 @@
 # DIRS
-dist
 build
+dist
 types
 node_modules
 coverage
+.github
 
 # FILES
-.DB_Store
 index.d.ts
+.DB_Store
