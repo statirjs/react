@@ -6,4 +6,5 @@
 - [x] Init jest
 - [x] Init size limit
 - [x] Init husky
+- [x] Init scripts
 - [ ] Update to version 0.1.0
