@@ -7,4 +7,11 @@
 - [x] Init size limit
 - [x] Init husky
 - [x] Init scripts
-- [ ] Update to version 0.1.0
+- [x] Add context
+- [x] Add provider
+- [x] Add useSelector
+- [x] Add useDispatch
+- [x] Add provider tests
+- [x] Add useSelector tests
+- [x] Add useDispatch tests
+- [x] Update to version 0.1.0
