@@ -1,4 +1,9 @@
-# MILESTONE №1 (June 1, 2020 - today)
+# MILESTONE №2 (June 4, 2020 - today)
+
+- [ ] Add context tests
+- [ ] Extend README
+
+# MILESTONE №1 (June 1, 2020 - June 1, 2020)
 
 - [x] Init github templates
 - [x] Init prettier
