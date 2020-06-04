@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import renderer, { act } from 'react-test-renderer';
 import { createForme, initStore } from '@statirjs/core';
 import { Provider, useSelector, useDispath } from '../src';
@@ -127,5 +127,59 @@ describe('Test useDispatch', () => {
     expect(mock[1][0].counter.count).toEqual(2);
 
     expect(mock.length).toEqual(2);
+  });
+
+  test('effected rerender', () => {
+    const selectorRerender = jest.fn(() => {});
+
+    const dispatchRerender = jest.fn(() => {});
+
+    const store = initStore({
+      forms: {
+        counter
+      }
+    });
+
+    function Display() {
+      const count = useSelector(
+        (rootState: RootState) => rootState.counter.count
+      );
+
+      selectorRerender();
+
+      return <h1>{count}</h1>;
+    }
+
+    function Button() {
+      const increment = useDispath(
+        (dispatch: Dispatch) => dispatch.counter.increment
+      );
+
+      dispatchRerender();
+
+      return <button onClick={increment}>Press</button>;
+    }
+
+    const component = renderer.create(
+      <Provider store={store}>
+        <Display />
+
+        <Button />
+      </Provider>
+    );
+
+    let tree: any = component.toJSON();
+
+    act(() => {
+      tree?.[1]?.props?.onClick?.();
+    });
+
+    act(() => {
+      tree?.[1]?.props?.onClick?.();
+    });
+
+    expect(selectorRerender.mock.calls.length).toEqual(3);
+
+    expect(dispatchRerender.mock.calls.length).toEqual(3);
   });
 });
