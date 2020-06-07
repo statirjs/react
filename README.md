@@ -18,6 +18,14 @@ npm i @statirjs/react
 
 [**HOMEPAGE**](https://statirjs.github.io/page/#/content/react/home)
 
+## Docs index
+
+- [**Quick start**](https://statirjs.github.io/page/#/content/react/quick_start)
+- [**Provider**](https://statirjs.github.io/page/#/content/react/provider)
+- [**useDispatch**](https://statirjs.github.io/page/#/content/react/use_dispatch)
+- [**useSelector**](https://statirjs.github.io/page/#/content/react/use_selector)
+- [**Contributing guide**](https://statirjs.github.io/page/#/content/react/contributing_guide)
+
 ## Discord
 
 Community [**DISCORD**](https://discord.gg/mypB55)
