@@ -2,6 +2,7 @@
 
 - [ ] Add context tests
 - [ ] Extend README
+- [x] Update to version 0.1.1
 
 # MILESTONE №1 (June 1, 2020 - June 1, 2020)
 
