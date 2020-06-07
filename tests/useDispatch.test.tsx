@@ -84,6 +84,11 @@ describe('Test useDispatch', () => {
     act(() => {
       tree?.props?.onClick?.();
       tree?.props?.onClick?.();
+      component.update(
+        <Provider store={store}>
+          <App />
+        </Provider>
+      );
     });
 
     tree = component.toJSON();
@@ -168,18 +173,18 @@ describe('Test useDispatch', () => {
       </Provider>
     );
 
-    let tree: any = component.toJSON();
-
     act(() => {
-      tree?.[1]?.props?.onClick?.();
+      component.update(
+        <Provider store={store}>
+          <Display />
+
+          <Button />
+        </Provider>
+      );
     });
 
-    act(() => {
-      tree?.[1]?.props?.onClick?.();
-    });
+    expect(selectorRerender.mock.calls.length).toEqual(2);
 
-    expect(selectorRerender.mock.calls.length).toEqual(3);
-
-    expect(dispatchRerender.mock.calls.length).toEqual(3);
+    expect(dispatchRerender.mock.calls.length).toEqual(2);
   });
 });

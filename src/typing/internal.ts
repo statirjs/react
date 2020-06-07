@@ -1,7 +1,5 @@
 import { ReactNode } from 'react';
-import { Store, RootState, Dispatch } from '@statirjs/core';
-
-export type Payload = any;
+import { Store, RootState, Dispatch, Payload } from '@statirjs/core';
 
 export type Action = (...rest: Payload[]) => void;
 
@@ -12,7 +10,6 @@ export interface ProviderProps {
 
 export interface ContextValue {
   store: Store;
-  reload(): void;
 }
 
 export type StateSelector<T> = (state: RootState) => T;

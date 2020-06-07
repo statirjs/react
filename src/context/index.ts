@@ -3,7 +3,6 @@ import { Listener } from '@statirjs/core';
 import * as S from '../typing/internal';
 
 const context: S.ContextValue = {
-  reload() {},
   store: {
     state: {},
     dispatch: {},
