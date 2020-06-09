@@ -20,7 +20,7 @@ const counter = createForme(
 );
 
 const store = initStore({
-  forms: {
+  formes: {
     counter
   }
 });

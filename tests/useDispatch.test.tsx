@@ -20,7 +20,7 @@ const counter = createForme(
 );
 
 const store = initStore({
-  forms: {
+  formes: {
     counter
   }
 });
@@ -66,7 +66,7 @@ describe('Test useDispatch', () => {
 
   test('rerender by dispatch', () => {
     const store = initStore({
-      forms: {
+      formes: {
         counter
       }
     });
@@ -100,7 +100,7 @@ describe('Test useDispatch', () => {
     const listner = jest.fn(() => {});
 
     const store = initStore({
-      forms: {
+      formes: {
         counter
       }
     });
@@ -140,7 +140,7 @@ describe('Test useDispatch', () => {
     const dispatchRerender = jest.fn(() => {});
 
     const store = initStore({
-      forms: {
+      formes: {
         counter
       }
     });
