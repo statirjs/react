@@ -1,6 +1,6 @@
 {
   "name": "@statirjs/react",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Connector to react",
   "main": "./build/cjs/index.js",
   "unpkg": "./build/umd/index.js",
