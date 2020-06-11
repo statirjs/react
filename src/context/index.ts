@@ -7,6 +7,7 @@ const context: S.ContextValue = {
     state: {},
     dispatch: {},
     listeners: [],
+    counter: 0,
     subscribe(listener: Listener) {
       this.listeners.push(listener);
     }
