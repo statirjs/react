@@ -99,6 +99,22 @@ describe('Test useDispatch', () => {
   test('listner calls', () => {
     const listner = jest.fn(() => {});
 
+    const counter = createForme(
+      {
+        count: 0
+      },
+      () => ({
+        actions: {
+          increment(state) {
+            return {
+              ...state,
+              count: state.count + 1
+            };
+          }
+        }
+      })
+    );
+
     const store = initStore({
       formes: {
         counter
@@ -121,17 +137,21 @@ describe('Test useDispatch', () => {
       tree?.props?.onClick?.();
     });
 
-    const mock = listner.mock.calls as any;
-
-    expect(mock[0][0].counter.count).toEqual(1);
-
     act(() => {
       tree?.props?.onClick?.();
     });
 
-    expect(mock[1][0].counter.count).toEqual(2);
+    const mock = listner.mock.calls as any;
 
-    expect(mock.length).toEqual(2);
+    expect(mock[0][0].counter.count).toEqual(1);
+
+    expect(mock[1][0].counter.count).toEqual(1);
+
+    expect(mock[2][0].counter.count).toEqual(2);
+
+    expect(mock.length).toEqual(3);
+
+    expect(store.counter).toEqual(3);
   });
 
   test('effected rerender', () => {
