@@ -1,5 +1,5 @@
 import { useMemo, useContext } from 'react';
-import { Context } from '../context';
+import { Context } from '../context/creator';
 import * as S from '../typing/internal';
 
 export function useSelect<T>(selector: S.StateSelector<T>): T {
