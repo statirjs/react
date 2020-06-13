@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test useSelector snapshot 1`] = `
+exports[`Test useSelect snapshot 1`] = `
 <span>
   0
 </span>

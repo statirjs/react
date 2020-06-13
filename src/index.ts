@@ -1,3 +1,3 @@
 export { Provider } from './provider';
 export { Context } from './context';
-export { useDispath, useSelector } from './hooks';
+export { useDispatch, useSelect } from './hooks';

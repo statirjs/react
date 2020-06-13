@@ -23,7 +23,7 @@ npm i @statirjs/react
 - [**Quick start**](https://statirjs.github.io/page/#/content/react/quick_start)
 - [**Provider**](https://statirjs.github.io/page/#/content/react/provider)
 - [**useDispatch**](https://statirjs.github.io/page/#/content/react/use_dispatch)
-- [**useSelector**](https://statirjs.github.io/page/#/content/react/use_selector)
+- [**useSelect**](https://statirjs.github.io/page/#/content/react/use_selector)
 - [**Contributing guide**](https://statirjs.github.io/page/#/content/react/contributing_guide)
 
 ## Discord

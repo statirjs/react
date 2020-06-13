@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { createForme, initStore } from '@statirjs/core';
-import { Provider, useSelector } from '../src';
+import { Provider, useSelect } from '../src';
 
 const counter = createForme(
   {
@@ -28,12 +28,12 @@ const store = initStore({
 type RootState = typeof store.state;
 
 function App() {
-  const count = useSelector((rootState: RootState) => rootState.counter.count);
+  const count = useSelect((rootState: RootState) => rootState.counter.count);
 
   return <span>{count}</span>;
 }
 
-describe('Test useSelector', () => {
+describe('Test useSelect', () => {
   test('snapshot', () => {
     const component = renderer.create(
       <Provider store={store}>

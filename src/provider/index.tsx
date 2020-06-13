@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { INITER_FORME, INITER_ACTION } from '@statirjs/core';
 import { Context } from '../context';
 import * as S from '../typing/internal';
 
@@ -16,8 +15,6 @@ export function Provider(props: S.ProviderProps) {
     store.subscribe(() => {
       setReloader({ ...RELOADER });
     });
-
-    store.dispatch[INITER_FORME][INITER_ACTION]();
   }, []);
 
   return <Context.Provider value={value}>{children}</Context.Provider>;

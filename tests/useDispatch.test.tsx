@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer, { act } from 'react-test-renderer';
 import { createForme, initStore } from '@statirjs/core';
-import { Provider, useSelector, useDispath } from '../src';
+import { Provider, useSelect, useDispatch } from '../src';
 
 const counter = createForme(
   {
@@ -30,9 +30,9 @@ type RootState = typeof store.state;
 type Dispatch = typeof store.dispatch;
 
 function App() {
-  const count = useSelector((rootState: RootState) => rootState.counter.count);
+  const count = useSelect((rootState: RootState) => rootState.counter.count);
 
-  const increment = useDispath(
+  const increment = useDispatch(
     (dispatch: Dispatch) => dispatch.counter.increment
   );
 
@@ -145,13 +145,9 @@ describe('Test useDispatch', () => {
 
     expect(mock[0][0].counter.count).toEqual(1);
 
-    expect(mock[1][0].counter.count).toEqual(1);
+    expect(mock[1][0].counter.count).toEqual(2);
 
-    expect(mock[2][0].counter.count).toEqual(2);
-
-    expect(mock.length).toEqual(3);
-
-    expect(store.counter).toEqual(3);
+    expect(mock.length).toEqual(2);
   });
 
   test('effected rerender', () => {
@@ -166,7 +162,7 @@ describe('Test useDispatch', () => {
     });
 
     function Display() {
-      const count = useSelector(
+      const count = useSelect(
         (rootState: RootState) => rootState.counter.count
       );
 
@@ -176,7 +172,7 @@ describe('Test useDispatch', () => {
     }
 
     function Button() {
-      const increment = useDispath(
+      const increment = useDispatch(
         (dispatch: Dispatch) => dispatch.counter.increment
       );
 

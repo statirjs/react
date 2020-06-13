@@ -21,7 +21,7 @@
     "rollup:build": "npx rollup -c",
     "rollup:watch": "npx rollup -c -w",
     "size:check": "npm run rollup:build && npx size-limit",
-    "scripts:types": "node ./scripts/types.js",
+    "scripts:types": "node ./scripts/types.js && npx prettier --write ./index.d.ts",
     "scripts:peers": "node ./scripts/peers.js && npx prettier --write ./package.json",
     "publish:clean": "npx rimraf dist types coverage",
     "publish:coverage": "npm run jest:coverage && npm run coveralls:send",
@@ -75,7 +75,7 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "@statirjs/core": "^1.1.4",
+    "@statirjs/core": "^1.1.6",
     "react": "^16.13.1"
   }
 }
