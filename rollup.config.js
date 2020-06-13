@@ -5,7 +5,7 @@ const external = ['@statirjs/core', 'react'];
 
 const globals = {
   react: 'React',
-  '@statirjs/core': 'core'
+  '@statirjs/core': 'StatirjsCore'
 };
 
 export default [
